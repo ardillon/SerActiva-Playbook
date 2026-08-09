@@ -193,6 +193,18 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
 .gloss dt{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--gold-deep);font-weight:600;margin-top:14px}
 .gloss dd{margin:4px 0 0;font-size:13.8px;color:var(--navy);opacity:.85}
 
+/* ---------- sequences ---------- */
+.seq-segment{margin-bottom:30px}
+.seq-segment:last-child{margin-bottom:0}
+.seq-segment-head{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}
+.seq-segment-head h3{font-size:16.5px}
+.seq-segment-head .seq-emoji{font-size:19px}
+.seq-step{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gold-deep);border-radius:0 var(--rad) var(--rad) 0;padding:16px 20px;margin-bottom:12px}
+.seq-meta{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:8px}
+.seq-meta.close{color:var(--slate)}
+.seq-subject{font-weight:600;font-size:14px;color:var(--navy);margin-bottom:8px}
+.seq-body{font-size:13.8px;color:var(--navy);opacity:.88;white-space:pre-line;margin:0}
+
 /* ---------- print ---------- */
 @media print{
   .topbar,.sidebar,.tb-actions{display:none!important}
@@ -242,12 +254,13 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
       <li><a class="navlink" href="#modelo"><span class="num">01</span>Modelo de negocio</a></li>
       <li><a class="navlink" href="#icp"><span class="num">02</span>Cliente ideal (ICP)</a></li>
       <li><a class="navlink" href="#comercial"><span class="num">03</span>Proceso comercial</a></li>
-      <li><a class="navlink" href="#diagnostico"><span class="num">04</span>Diagnóstico y precios</a></li>
-      <li><a class="navlink" href="#objeciones"><span class="num">05</span>Objeciones frecuentes</a></li>
-      <li><a class="navlink" href="#hubspot"><span class="num">06</span>HubSpot</a></li>
-      <li><a class="navlink" href="#kpis"><span class="num">07</span>KPIs comerciales</a></li>
-      <li><a class="navlink" href="#roles"><span class="num">08</span>Roles y cadencias</a></li>
-      <li><a class="navlink" href="#glosario"><span class="num">09</span>Glosario</a></li>
+      <li><a class="navlink" href="#secuencias"><span class="num">04</span>Secuencias de prospección</a></li>
+      <li><a class="navlink" href="#diagnostico"><span class="num">05</span>Diagnóstico y precios</a></li>
+      <li><a class="navlink" href="#objeciones"><span class="num">06</span>Objeciones frecuentes</a></li>
+      <li><a class="navlink" href="#hubspot"><span class="num">07</span>HubSpot</a></li>
+      <li><a class="navlink" href="#kpis"><span class="num">08</span>KPIs comerciales</a></li>
+      <li><a class="navlink" href="#roles"><span class="num">09</span>Roles y cadencias</a></li>
+      <li><a class="navlink" href="#glosario"><span class="num">10</span>Glosario</a></li>
     </ul>
     <div class="sidebar-foot">
       <p><b style="color:var(--navy)">Alcance:</b> gestión comercial de ventas, exclusivamente.</p>
@@ -302,21 +315,56 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
     <!-- 02 ICP -->
     <section class="block" id="icp">
       <div class="block-head"><span class="idx">02</span><h2>Cliente ideal (ICP)</h2></div>
-      <p class="block-sub">Antes de agendar un diagnóstico, un contacto debe encajar en esto. El ICP Score (0–100) combina las tres primeras filas de esta tabla.</p>
+      <p class="block-sub">El segmento es lo único que excluye para pasar a MQL. Cargo y volumen no bloquean — alimentan el ICP Score, y la autoridad real de decisión se confirma después, en la llamada.</p>
 
       <div class="tbl-wrap">
         <table class="tbl">
           <thead><tr><th>Criterio</th><th>Qué buscamos</th></tr></thead>
           <tbody>
-            <tr><td class="k">Segmento de empresa</td><td>Constructora, inmobiliaria o promotora</td></tr>
-            <tr><td class="k">Cargo de decisión</td><td>Gerente General, Gerente Comercial, Director Comercial, Gerente de Proyectos, Gerente Financiero, Presidente, Propietario o Socio</td></tr>
-            <tr><td class="k">Señal de volumen</td><td>Proyecto con varias unidades por escriturar y más de una institución financiera involucrada</td></tr>
+            <tr><td class="k">Segmento de empresa</td><td>Constructora, inmobiliaria o promotora — único criterio excluyente</td></tr>
+            <tr><td class="k">Cargo</td><td>Se registra desde el formulario; ver prioridad por cargo abajo</td></tr>
+            <tr><td class="k">Señal de volumen</td><td>Unidades en Comercialización + Instituciones Financieras (ambas propiedades de Contacto)</td></tr>
             <tr><td class="k">Canal de entrada</td><td>Apollo y bases de datos existentes (outbound), inbound vía web/landing, o referidos</td></tr>
+            <tr><td class="k">Tomador de Decisión</td><td>Sí / No — se confirma en la llamada, no en el formulario. Define el paso a Contacto SQL, no el Cargo</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <caption>Prioridad por Cargo (7 opciones reales en HubSpot)</caption>
+          <thead><tr><th>Cargo</th><th>Prioridad</th></tr></thead>
+          <tbody>
+            <tr><td class="k">Gerente General / Propietario</td><td>Alta</td></tr>
+            <tr><td class="k">Gerente Comercial</td><td>Alta</td></tr>
+            <tr><td class="k">Director de Proyectos</td><td>Alta</td></tr>
+            <tr><td class="k">Responsable Legal</td><td>Media</td></tr>
+            <tr><td class="k">Gerente Administrativo</td><td>Media</td></tr>
+            <tr><td class="k">Coordinador de Escrituración</td><td>A confirmar — rol operativo, probablemente no decide compra</td></tr>
+            <tr><td class="k">Otro</td><td>A confirmar</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <p><strong>Regla de calificación:</strong> una empresa fuera de los tres segmentos no pasa a "MQL", aunque haya respondido con interés. El cargo no bloquea — solo prioriza.</p>
+      </div>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <caption>Campos mínimos para pasar de Prospecto a MQL</caption>
+          <thead><tr><th>Campo</th><th>Tipo</th><th>Condición</th></tr></thead>
+          <tbody>
+            <tr><td class="k">Segmento de empresa</td><td>Excluyente</td><td>Constructora, inmobiliaria o promotora</td></tr>
+            <tr><td class="k">Cargo</td><td>Se registra</td><td>Cualquiera de las 7 opciones — no excluye</td></tr>
+            <tr><td class="k">Canal de entrada</td><td>Se registra</td><td>Origen documentado: Apollo, bases existentes, inbound o referido</td></tr>
+            <tr><td class="k">ICP Score</td><td>Se registra</td><td>Resultado ≥ 40 — banda Medio o Alto</td></tr>
+            <tr><td class="k">Fecha MQL</td><td>Se registra</td><td>Timestamp del paso a MQL</td></tr>
           </tbody>
         </table>
       </div>
       <div class="callout">
-        <p><strong>Regla de calificación:</strong> un cargo sin poder de decisión o una empresa fuera de los tres segmentos no pasa a "MQL", aunque haya respondido con interés.</p>
+        <p><strong>Solo el segmento decide el paso a MQL.</strong> Ni el cargo ni el volumen son excluyentes en esta etapa — se confirman después, en la llamada de validación SQL, junto con "Tomador de Decisión".</p>
       </div>
 
       <div class="tbl-wrap">
@@ -324,9 +372,9 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
           <caption>Bandas del ICP Score (0–100)</caption>
           <thead><tr><th>Banda</th><th>Qué significa</th><th>Acción</th></tr></thead>
           <tbody>
-            <tr><td class="k">0–39 · Bajo</td><td>No cumple segmento y/o cargo de decisión</td><td>No se agenda diagnóstico</td></tr>
-            <tr><td class="k">40–69 · Medio</td><td>Cumple segmento y cargo, pero sin señal de volumen confirmada</td><td>Se nutre antes de agendar</td></tr>
-            <tr><td class="k">70–100 · Alto</td><td>Cumple segmento, cargo y señal de volumen</td><td>Diagnóstico prioritario · activa "Constructoras ICP alto" en HubSpot</td></tr>
+            <tr><td class="k">0–39 · Bajo</td><td>Segmento califica, pero cargo de baja prioridad y sin señal de volumen</td><td>No entra a la lista "MQL listos para Contacto SQL"</td></tr>
+            <tr><td class="k">40–69 · Medio</td><td>Segmento califica, cargo o volumen parcialmente favorable</td><td>Entra a la lista, prioridad normal</td></tr>
+            <tr><td class="k">70–100 · Alto</td><td>Segmento califica, cargo de alta prioridad y señal de volumen fuerte</td><td>Entra a la lista con prioridad · activa "Constructoras ICP alto" en HubSpot</td></tr>
           </tbody>
         </table>
       </div>
@@ -335,9 +383,9 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
     <!-- 03 PIPELINE COMERCIAL -->
     <section class="block" id="comercial">
       <div class="block-head"><span class="idx">03</span><h2>Proceso comercial</h2></div>
-      <p class="block-sub">El único pipeline de ventas en HubSpot — 8 etapas, desde el primer contacto hasta el cierre.</p>
+      <p class="block-sub">Prospecto y MQL viven en el objeto Contacto — todavía sin negocio. El negocio (deal) recién nace al confirmarse el Contacto SQL, y desde ahí corre el único pipeline de HubSpot.</p>
 
-      <p class="subhead">De dónde entra el prospecto (etapa 1)</p>
+      <p class="subhead">De dónde entra el prospecto</p>
       <div class="grid grid-4" style="margin-bottom:28px">
         <div class="card"><p class="tag tag-gold">Apollo</p><p style="font-size:13.5px">Sourcing y enriquecimiento de contactos que cumplen el ICP: cargo, empresa, tamaño de proyecto.</p></div>
         <div class="card"><p class="tag tag-gold">Bases existentes</p><p style="font-size:13.5px">Contactos y empresas ya relevados por Seractiva en prospecciones y proyectos anteriores.</p></div>
@@ -345,25 +393,41 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
         <div class="card"><p class="tag tag-gold">Referidos</p><p style="font-size:13.5px">Recomendaciones de clientes actuales o contactos del sector.</p></div>
       </div>
 
+      <p class="subhead">Fase 1 — Objeto Contacto (todavía sin negocio)</p>
+      <div class="tracker-wrap">
+        <div class="tracker" style="min-width:320px">
+          <div class="stage"><div class="stage-node">1</div><div class="stage-name">Prospecto</div><div class="stage-prob">Apollo / bases / inbound</div></div>
+          <div class="stage"><div class="stage-node">2</div><div class="stage-name">MQL</div><div class="stage-prob">Fecha MQL</div></div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <p><strong>Lista activa "MQL listos para Contacto SQL":</strong> Fecha MQL registrada + ICP Score ≥ 40. El comercial trabaja esta lista llamando o escribiendo — todavía sin crear negocio.</p>
+      </div>
+
+      <p class="subhead">Fase 2 — Pipeline "Comercial" (el negocio nace aquí)</p>
       <div class="tracker-wrap">
         <div class="tracker">
-          <div class="stage"><div class="stage-node">1</div><div class="stage-name">Prospecto</div><div class="stage-prob">10%</div></div>
-          <div class="stage"><div class="stage-node">2</div><div class="stage-name">MQL</div><div class="stage-prob">20%</div></div>
-          <div class="stage"><div class="stage-node">3</div><div class="stage-name">Contacto SQL</div><div class="stage-prob">40%</div></div>
-          <div class="stage"><div class="stage-node">4</div><div class="stage-name">Diagnóstico agendado</div><div class="stage-prob">50%</div></div>
-          <div class="stage"><div class="stage-node">5</div><div class="stage-name">Diagnóstico realizado</div><div class="stage-prob">60%</div></div>
-          <div class="stage"><div class="stage-node">6</div><div class="stage-name">Propuesta enviada</div><div class="stage-prob">80%</div></div>
-          <div class="stage"><div class="stage-node">7</div><div class="stage-name">Negociación</div><div class="stage-prob">90%</div></div>
+          <div class="stage"><div class="stage-node">1</div><div class="stage-name">Contacto SQL</div><div class="stage-prob">40%</div></div>
+          <div class="stage"><div class="stage-node">2</div><div class="stage-name">Diagnóstico agendado</div><div class="stage-prob">50%</div></div>
+          <div class="stage"><div class="stage-node">3</div><div class="stage-name">Diagnóstico realizado</div><div class="stage-prob">60%</div></div>
+          <div class="stage"><div class="stage-node">4</div><div class="stage-name">Propuesta enviada</div><div class="stage-prob">80%</div></div>
+          <div class="stage"><div class="stage-node">5</div><div class="stage-name">Negociación</div><div class="stage-prob">90%</div></div>
           <div class="stage end"><div class="stage-node">✓</div><div class="stage-name">Closed Won</div><div class="stage-prob">100%</div></div>
           <div class="stage lost"><div class="stage-node">✕</div><div class="stage-name">Closed Lost</div><div class="stage-prob">0%</div></div>
         </div>
       </div>
 
       <div class="grid grid-2">
-        <div class="card"><h4>Prospecto → MQL</h4><p>Se confirma por datos que el contacto encaja en el ICP (segmento, cargo, señales de volumen) — sin haber hablado aún con nadie.</p></div>
-        <div class="card"><h4>MQL → Contacto SQL</h4><p>Un comercial llama o escribe directamente para confirmar interés real, autoridad de decisión y urgencia. Ahí el lead deja de ser calificado solo por datos y pasa a estar calificado por ventas.</p></div>
-        <div class="card"><h4>Contacto SQL → Diagnóstico realizado</h4><p>Con el SQL confirmado se agenda y se corre el diagnóstico gratuito de 30 minutos, que releva los datos que definen el precio. Sin diagnóstico realizado, no hay propuesta.</p></div>
+        <div class="card"><h4>Prospecto → MQL <span style="opacity:.6;font-weight:500">(Contacto)</span></h4><p>Se confirma por datos que el contacto encaja en el ICP (segmento, cargo) — sin haber hablado aún con nadie ni existir negocio.</p></div>
+        <div class="card"><h4>MQL → Contacto SQL <span style="opacity:.6;font-weight:500">(nace el negocio)</span></h4><p>Un comercial trabaja la lista y llama o escribe directamente. Si la persona confirma ser Tomador de Decisión (o conecta con quien sí lo es) y muestra interés real y urgencia, se crea el negocio.</p></div>
+        <div class="card"><h4>Contacto SQL → Diagnóstico realizado</h4><p>Con el negocio creado se agenda y se corre el diagnóstico gratuito de 30 minutos, que releva los datos que definen el precio. Sin diagnóstico realizado, no hay propuesta.</p></div>
+        <div class="card"><h4>Diagnóstico → Propuesta <span style="opacity:.6;font-weight:500">(la arma Gerencia)</span></h4><p>La ejecutiva releva los datos; Gerencia analiza y construye la cotización antes de pasar a "Propuesta enviada".</p></div>
         <div class="card"><h4>Propuesta → Negociación → Closed Won</h4><p>La propuesta ya incluye modalidad y precio definidos; la negociación ajusta alcance o condiciones, no el criterio de cotización.</p></div>
+      </div>
+
+      <div class="callout amber">
+        <p><strong>La cotización la crea Gerencia, no la ejecutiva de ventas.</strong> Requiere un análisis previo de lo relevado en el diagnóstico (unidades, instituciones financieras, cartera documental) antes de fijar precio y modalidad. La ejecutiva no construye la propuesta por su cuenta.</p>
       </div>
 
       <div class="callout">
@@ -371,15 +435,101 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
       </div>
     </section>
 
+    <!-- 04 SECUENCIAS DE PROSPECCIÓN -->
+    <section class="block" id="secuencias">
+      <div class="block-head"><span class="idx">04</span><h2>Secuencias de prospección</h2></div>
+      <p class="block-sub">Hasta 3 intentos por correo para activar un prospecto recién ingresado (Apollo, bases existentes, inbound), uno por cada segmento del ICP. Objetivo: conseguir el sí para el diagnóstico gratuito o, al menos, dejar la puerta abierta.</p>
+
+      <div class="seq-segment">
+        <div class="seq-segment-head"><span class="seq-emoji">🏗️</span><h3>Constructora</h3></div>
+
+        <div class="seq-step">
+          <p class="seq-meta">Intento 1 · Día 0</p>
+          <p class="seq-subject">Asunto: Escrituración sin cuellos de botella para {{Proyecto}}</p>
+          <p class="seq-body">Hola {{Nombre}}, vi que {{Empresa}} tiene unidades en comercialización. La mayoría de constructoras pierde cierres cuando la escrituración se atasca por documentos del comprador o por trabajar con varias instituciones financieras a la vez.
+
+En SerActiva llevamos +20 años en esto: un expediente por unidad, un responsable hasta la inscripción.
+
+¿30 minutos esta semana para un diagnóstico gratuito? Te digo exactamente dónde se te van a atascar los cierres antes de que pase.</p>
+        </div>
+
+        <div class="seq-step">
+          <p class="seq-meta">Intento 2 · Día 3</p>
+          <p class="seq-subject">Asunto: Re: Escrituración sin cuellos de botella</p>
+          <p class="seq-body">Hola {{Nombre}}, seré breve. Si {{Empresa}} entrega unidades este semestre, vale la pena revisar antes el estado de la cartera documental y qué instituciones financieras están involucradas — son las dos causas más comunes de retraso.
+
+30 minutos, sin costo. ¿Martes o miércoles?</p>
+        </div>
+
+        <div class="seq-step">
+          <p class="seq-meta close">Intento 3 · Día 7 (cierre)</p>
+          <p class="seq-subject">Asunto: Cierro el tema por ahora</p>
+          <p class="seq-body">Hola {{Nombre}}, no quiero insistir de más. Si en algún momento la escrituración de {{Proyecto}} se vuelve un dolor de cabeza, quedo disponible para el diagnóstico gratuito. Éxitos con el proyecto.</p>
+        </div>
+      </div>
+
+      <div class="seq-segment">
+        <div class="seq-segment-head"><span class="seq-emoji">🏢</span><h3>Inmobiliaria</h3></div>
+
+        <div class="seq-step">
+          <p class="seq-meta">Intento 1 · Día 0</p>
+          <p class="seq-subject">Asunto: Cierra ventas más rápido, sin perder comisión por trámites</p>
+          <p class="seq-body">Hola {{Nombre}}, cuando una venta ya está cerrada pero la escrituración se demora, el riesgo es real: comprador que se enfría, comisión que se atrasa.
+
+En SerActiva coordinamos ese proceso completo — comprador, institución financiera y registro — con un responsable por unidad hasta la inscripción.
+
+¿Agendamos 30 minutos de diagnóstico gratuito?</p>
+        </div>
+
+        <div class="seq-step">
+          <p class="seq-meta">Intento 2 · Día 3</p>
+          <p class="seq-subject">Asunto: Re: Cierra ventas más rápido</p>
+          <p class="seq-body">Hola {{Nombre}}, ¿cuántas unidades tienen hoy en proceso de escrituración? Si son varias y con distintas instituciones financieras, probablemente ya sientan la fricción. 30 minutos esta semana, sin costo.</p>
+        </div>
+
+        <div class="seq-step">
+          <p class="seq-meta close">Intento 3 · Día 7 (cierre)</p>
+          <p class="seq-subject">Asunto: Última nota</p>
+          <p class="seq-body">Hola {{Nombre}}, entiendo que ahora no sea prioridad. Dejo la puerta abierta para el diagnóstico gratuito cuando les convenga. Éxitos con las ventas del semestre.</p>
+        </div>
+      </div>
+
+      <div class="seq-segment">
+        <div class="seq-segment-head"><span class="seq-emoji">🏘️</span><h3>Promotora</h3></div>
+
+        <div class="seq-step">
+          <p class="seq-meta">Intento 1 · Día 0</p>
+          <p class="seq-subject">Asunto: Un solo proceso de escrituración para todos tus proyectos</p>
+          <p class="seq-body">Hola {{Nombre}}, coordinar escrituración entre varios constructores socios y varias instituciones financieras a la vez suele ser el punto ciego de una promotora — nadie tiene visibilidad completa hasta que algo se atrasa.
+
+Armamos un expediente por unidad, con un responsable único hasta la inscripción, sin importar cuántos proyectos o socios estén involucrados.
+
+¿30 minutos para un diagnóstico gratuito?</p>
+        </div>
+
+        <div class="seq-step">
+          <p class="seq-meta">Intento 2 · Día 3</p>
+          <p class="seq-subject">Asunto: Re: Un solo proceso de escrituración</p>
+          <p class="seq-body">Hola {{Nombre}}, si hoy manejan más de un proyecto activo, seguro ya notaron que cada socio y cada institución financiera trabaja distinto. El diagnóstico gratuito de 30 minutos les da una foto clara de dónde están parados.</p>
+        </div>
+
+        <div class="seq-step">
+          <p class="seq-meta close">Intento 3 · Día 7 (cierre)</p>
+          <p class="seq-subject">Asunto: Cierro por ahora</p>
+          <p class="seq-body">Hola {{Nombre}}, no quiero saturar tu bandeja. Cuando la coordinación entre proyectos se vuelva un tema, con gusto retomamos el diagnóstico gratuito. Éxitos con la cartera de proyectos.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- 04 DIAGNOSTICO Y PRECIOS -->
     <section class="block" id="diagnostico">
-      <div class="block-head"><span class="idx">04</span><h2>Diagnóstico y modalidades de precio</h2></div>
+      <div class="block-head"><span class="idx">05</span><h2>Diagnóstico y modalidades de precio</h2></div>
       <p class="block-sub">El diagnóstico de 30 minutos es el paso que convierte una conversación en una cotización real.</p>
 
       <div class="card" style="margin-bottom:22px">
         <h4 style="margin-bottom:10px">El diagnóstico releva tres datos</h4>
         <div class="grid grid-3">
-          <div><p class="tag tag-gold">1</p><p style="font-size:14px"><b>Número de unidades</b> a escriturar en el proyecto</p></div>
+          <div><p class="tag tag-gold">1</p><p style="font-size:14px"><b>Unidades en comercialización</b> del proyecto (rango, ya en el Contacto desde el formulario)</p></div>
           <div><p class="tag tag-gold">2</p><p style="font-size:14px"><b>Instituciones financieras</b> involucradas: banca privada, mutualista, cooperativa o BIESS</p></div>
           <div><p class="tag tag-gold">3</p><p style="font-size:14px"><b>Estado de la cartera documental</b> del proyecto y de los compradores</p></div>
         </div>
@@ -408,7 +558,7 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
 
     <!-- 05 OBJECIONES -->
     <section class="block" id="objeciones">
-      <div class="block-head"><span class="idx">05</span><h2>Objeciones frecuentes</h2></div>
+      <div class="block-head"><span class="idx">06</span><h2>Objeciones frecuentes</h2></div>
       <p class="block-sub">Respuestas ya validadas en la conversación comercial — para usar tal cual en llamadas y correos.</p>
 
       <details class="faq" open>
@@ -435,37 +585,50 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
 
     <!-- 06 HUBSPOT -->
     <section class="block" id="hubspot">
-      <div class="block-head"><span class="idx">06</span><h2>HubSpot</h2></div>
-      <p class="block-sub">Única fuente de información del proceso comercial. Un solo pipeline, sin fragmentar el forecast en otras herramientas.</p>
+      <div class="block-head"><span class="idx">07</span><h2>HubSpot</h2></div>
+      <p class="block-sub">Única fuente de información del proceso comercial. Prospecto y MQL viven en el Contacto; el negocio y su único pipeline arrancan en Contacto SQL.</p>
+
+      <div class="callout amber">
+        <p><strong>Los formularios de HubSpot no escriben en propiedades de Negocio</strong> — solo en Contacto, Empresa y Ticket. Por eso toda la data del formulario (proyecto, unidades, instituciones financieras) cae en el Contacto. Copiarla a Negocio requeriría un Workflow (Professional/Enterprise); en Starter no hay ganancia real en duplicarla a mano, así que se deja solo en Contacto.</p>
+      </div>
 
       <div class="toolcard">
         <h3>Pipeline "Comercial"</h3>
-        <p class="role">7 etapas · único pipeline configurado</p>
+        <p class="role">5 etapas + Closed Won/Lost · arranca en Contacto SQL</p>
         <div class="tcgrid">
           <div>
             <h5>Propiedades de contacto</h5>
             <ul>
               <li><b>Segmento de empresa</b> — constructora, inmobiliaria, promotora</li>
-              <li><b>Cargo de decisión</b></li>
+              <li><b>Cargo</b> — 7 opciones, ver sección ICP</li>
+              <li><b>Tomador de Decisión</b> (Sí/No) — se llena en la llamada, no en el formulario</li>
               <li><b>ICP Score</b></li>
-              <li><b>Fecha MQL</b>, <b>fecha de contacto SQL</b> y <b>fecha de diagnóstico agendado</b></li>
+              <li><b>Fecha MQL</b></li>
+              <li><b>Último contacto</b></li>
               <li><b>Comercial asignado</b></li>
               <li><b>Canal de entrada</b></li>
+              <li><b>Unidades en Comercialización</b>, <b>Instituciones Financieras</b> — del formulario</li>
+              <li><b>Nombre del proyecto</b>, <b>etapa del proyecto</b> — del formulario</li>
+              <li><b>¿Qué necesita resolver primero?</b> — del formulario, leer antes del diagnóstico</li>
+              <li><b>Preferencia de comunicación</b>, <b>LinkedIn</b> — enriquecimiento</li>
             </ul>
           </div>
           <div>
             <h5>Propiedades de deal</h5>
             <ul>
-              <li><b>Modalidad de servicio</b> — trámite / proyecto / mesa mensual</li>
-              <li><b>Número de unidades</b></li>
-              <li><b>Instituciones financieras</b> involucradas</li>
+              <li><b>Monto</b> <span style="opacity:.65">(nativo — Amount)</span></li>
+              <li><b>Servicio</b> — trámite / proyecto / mesa mensual</li>
               <li><b>Motivo de pérdida</b></li>
+              <li><b>Fecha de propuesta</b> — alimenta el KPI de antigüedad</li>
+              <li><b>Fecha de reunión</b> — equivalente a "diagnóstico agendado"</li>
+              <li><b>Próxima acción</b>, <b>próximo seguimiento</b>, <b>prioridad</b> — higiene de pipeline</li>
             </ul>
           </div>
         </div>
         <div style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12)">
           <h5>Listas activas de alerta</h5>
           <ul style="columns:2;gap:24px">
+            <li><b>MQL listos para Contacto SQL</b> — nueva</li>
             <li>Constructoras ICP alto (≥ 70)</li>
             <li>Propuestas enviadas sin respuesta</li>
             <li>Deals en modalidad mesa mensual</li>
@@ -473,25 +636,113 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
           </ul>
         </div>
       </div>
+
+      <div class="card" style="margin-top:20px">
+        <h4 style="margin-bottom:10px">Depuración aplicada (auditoría de hoy)</h4>
+        <div class="grid grid-2">
+          <div>
+            <p class="tag tag-red">Eliminadas</p>
+            <ul style="font-size:13px">
+              <li>Relación (Contacto) — 0 usos, nunca definida</li>
+              <li>Probabilidad (Negocio) — duplicaba la probabilidad nativa de etapa</li>
+              <li>Origen Del Lead (Negocio) — duplicaba Canal de entrada</li>
+              <li>Fecha de contacto SQL (Negocio) — duplicaba la fecha de creación del negocio</li>
+              <li>Fecha de diagnóstico agendado (Contacto) — el dato correcto es Fecha de Reunión, en Negocio</li>
+            </ul>
+          </div>
+          <div>
+            <p class="tag tag-amber">Archivada / a confirmar</p>
+            <ul style="font-size:13px">
+              <li><b>Requiere Implementación</b> (Negocio) — archivada, es de onboarding, fuera de alcance</li>
+              <li><b>WhatsApp</b> (Negocio) — a confirmar por qué el negocio necesita uno propio además del del contacto</li>
+              <li><b>Campaña</b> (Negocio) — a confirmar si se va a trackear activamente</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:20px">
+        <h4 style="margin-bottom:12px">Checklist de creación de negocio</h4>
+        <p style="font-size:13px;color:var(--slate);margin-bottom:14px">Para la tarjeta del gestor al crear el negocio en Contacto SQL.</p>
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <caption>Obligatorios al crear</caption>
+            <thead><tr><th>Propiedad</th><th>Cómo se llena</th></tr></thead>
+            <tbody>
+              <tr><td class="k">Nombre del negocio</td><td>Manual, según la nomenclatura (ver abajo)</td></tr>
+              <tr><td class="k">Titular del negocio</td><td>Quien confirma el SQL y crea el negocio</td></tr>
+              <tr><td class="k">Servicio</td><td>Estimado según Unidades en Comercialización del contacto</td></tr>
+              <tr><td class="k">Próxima acción</td><td>Texto libre — qué sigue de inmediato</td></tr>
+              <tr><td class="k">Próximo seguimiento</td><td>Fecha de revisión si no hay respuesta</td></tr>
+              <tr><td class="k">Prioridad</td><td>En base al ICP Score del contacto asociado</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:13px;color:var(--slate);margin:10px 0 6px"><b>No forzar al crear</b> — se llenan en su etapa, no antes:</p>
+        <ul style="font-size:13px;margin:0">
+          <li><b>Monto</b> y <b>Fecha de propuesta</b> — en "Propuesta enviada"</li>
+          <li><b>Fecha de reunión</b> — al agendar el diagnóstico</li>
+          <li><b>Motivo de pérdida</b> — solo si llega a Closed Lost</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:20px">
+        <h4 style="margin-bottom:12px">Nomenclatura de negocios</h4>
+        <p style="font-size:13.8px;margin-bottom:14px"><b>Formato:</b> <span class="mono">{Empresa} – {Alcance} – {Servicio}</span></p>
+        <div class="tbl-wrap">
+          <table class="tbl">
+            <thead><tr><th>Servicio</th><th>Alcance</th></tr></thead>
+            <tbody>
+              <tr><td class="k">Trámite</td><td>Nombre corto del trámite, o "Trámite suelto" si no aplica</td></tr>
+              <tr><td class="k">Proyecto</td><td>Nombre del Proyecto (copiado del Contacto)</td></tr>
+              <tr><td class="k">Mesa mensual</td><td>"Portafolio activo"</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:13.5px;margin-bottom:6px"><b>Ejemplos:</b></p>
+        <ul style="font-size:13.5px;margin-bottom:12px">
+          <li class="mono">Constructora Andina – Bosques del Valle – Proyecto</li>
+          <li class="mono">Grupo Cumbayá Homes – Portafolio activo – Mesa mensual</li>
+          <li class="mono">Inversiones del Valle – Trámite suelto – Trámite</li>
+        </ul>
+        <p style="font-size:13.5px;margin:0"><b>Desambiguación:</b> si ya existe un negocio abierto con el mismo nombre exacto, se agrega mes y año — ej. <span class="mono">"Inversiones del Valle – Trámite suelto (ago 2026) – Trámite"</span>.</p>
+      </div>
+
+      <div class="card" style="margin-top:20px">
+        <h4 style="margin-bottom:4px">Información destacada</h4>
+        <p style="font-size:13px;color:var(--slate);margin-bottom:16px">Tarjeta "Destacados" (máx. 4 propiedades, columna central) + lista completa en la barra lateral. Personalizar la vista propia no requiere plan superior; fijarla como vista por defecto para todo el equipo requiere Professional o Enterprise.</p>
+        <div class="grid grid-2">
+          <div>
+            <p class="subhead" style="margin-bottom:8px">Contacto</p>
+            <p style="font-size:12.8px;color:var(--navy);opacity:.85;margin-bottom:8px"><b>Destacado (4):</b> ICP Score, Cargo, Último contacto, Comercial asignado</p>
+            <p style="font-size:12.8px;color:var(--navy);opacity:.85;margin:0"><b>Lista completa:</b> + Nombre, Empresa, Segmento de empresa, Tomador de Decisión, Canal de entrada, Fecha MQL, Preferencia de comunicación, Teléfono, Email, LinkedIn</p>
+          </div>
+          <div>
+            <p class="subhead" style="margin-bottom:8px">Negocio</p>
+            <p style="font-size:12.8px;color:var(--navy);opacity:.85;margin-bottom:8px"><b>Destacado (4):</b> Etapa, Servicio, Monto, Próximo seguimiento</p>
+            <p style="font-size:12.8px;color:var(--navy);opacity:.85;margin:0"><b>Lista completa:</b> + Nombre del negocio, Titular del negocio, Fecha de reunión, Fecha de propuesta, Próxima acción, Prioridad, Motivo de pérdida, Fecha de cierre</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- 07 KPIs -->
     <section class="block" id="kpis">
-      <div class="block-head"><span class="idx">07</span><h2>KPIs comerciales</h2></div>
+      <div class="block-head"><span class="idx">08</span><h2>KPIs comerciales</h2></div>
       <p class="block-sub">Qué medir y de dónde sale cada dato — todo desde HubSpot. Los valores objetivo se fijan con el equipo tras el primer trimestre de datos limpios; este playbook define el qué, no todavía el cuánto.</p>
 
       <div class="tbl-wrap">
         <table class="tbl">
           <caption>A · Funnel comercial</caption>
-          <thead><tr><th>Métrica</th><th>Cómo se calcula</th></tr></thead>
+          <thead><tr><th>Métrica</th><th>Cómo se calcula</th><th>Objeto</th></tr></thead>
           <tbody>
-            <tr><td class="k">Tasa Prospecto → MQL</td><td>MQL alcanzados / Prospectos creados</td></tr>
-            <tr><td class="k">Tasa MQL → Contacto SQL</td><td>Contactos SQL confirmados / MQL alcanzados</td></tr>
-            <tr><td class="k">Tasa SQL → Diagnóstico agendado</td><td>Diagnósticos agendados / Contactos SQL confirmados</td></tr>
-            <tr><td class="k">Show rate del diagnóstico</td><td>Diagnósticos realizados / Diagnósticos agendados</td></tr>
-            <tr><td class="k">Tasa Diagnóstico → Propuesta</td><td>Propuestas enviadas / Diagnósticos realizados</td></tr>
-            <tr><td class="k">Win rate</td><td>Deals en Closed Won / (Closed Won + Closed Lost)</td></tr>
-            <tr><td class="k">Ciclo de venta</td><td>Días promedio de Prospecto a Closed Won</td></tr>
+            <tr><td class="k">Tasa Prospecto → MQL</td><td>MQL alcanzados / Prospectos creados</td><td>Contacto</td></tr>
+            <tr><td class="k">Tasa MQL → Negocio creado</td><td>Negocios creados / Contactos en la lista "MQL listos para Contacto SQL"</td><td>Contacto → Negocio</td></tr>
+            <tr><td class="k">Show rate del diagnóstico</td><td>Diagnósticos realizados / Diagnósticos agendados</td><td>Negocio</td></tr>
+            <tr><td class="k">Tasa Diagnóstico → Propuesta</td><td>Propuestas enviadas / Diagnósticos realizados</td><td>Negocio</td></tr>
+            <tr><td class="k">Win rate</td><td>Deals en Closed Won / (Closed Won + Closed Lost)</td><td>Negocio</td></tr>
+            <tr><td class="k">Ciclo de venta (negocio)</td><td>Días promedio de Contacto SQL a Closed Won</td><td>Negocio</td></tr>
+            <tr><td class="k">Ciclo de venta (completo)</td><td>Días promedio de Fecha MQL a Closed Won</td><td>Contacto + Negocio</td></tr>
           </tbody>
         </table>
       </div>
@@ -501,8 +752,8 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
           <caption>B · Calidad de cartera</caption>
           <thead><tr><th>Métrica</th><th>Cómo se calcula</th></tr></thead>
           <tbody>
-            <tr><td class="k">ICP Score promedio</td><td>Promedio de ICP Score en deals abiertos</td></tr>
-            <tr><td class="k">% deals ICP ≥70</td><td>Deals con ICP alto / total de deals abiertos</td></tr>
+            <tr><td class="k">ICP Score promedio</td><td>Promedio de ICP Score del contacto asociado a negocios abiertos</td></tr>
+            <tr><td class="k">% negocios con ICP ≥70</td><td>Negocios cuyo contacto tiene ICP alto / total de negocios abiertos</td></tr>
             <tr><td class="k">Mix de modalidad</td><td>% y facturación por trámite / proyecto / mesa mensual</td></tr>
             <tr><td class="k">Ranking de motivos de pérdida</td><td>Conteo de deals perdidos por motivo</td></tr>
           </tbody>
@@ -514,8 +765,10 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
           <caption>C · Salud del pipeline</caption>
           <thead><tr><th>Métrica</th><th>Cómo se calcula</th></tr></thead>
           <tbody>
+            <tr><td class="k">Lista "MQL listos" sin trabajar</td><td>Contactos en la lista con "Último contacto" vacío o vencido</td></tr>
             <tr><td class="k">Deals activos por comercial</td><td>Conteo de deals abiertos agrupado por comercial asignado</td></tr>
-            <tr><td class="k">Antigüedad de propuestas sin respuesta</td><td>Días desde envío en la lista activa correspondiente</td></tr>
+            <tr><td class="k">Antigüedad de propuestas sin respuesta</td><td>Días desde "Fecha de propuesta" para deals en esa lista activa</td></tr>
+            <tr><td class="k">% deals sin próximo seguimiento</td><td>Deals abiertos con "Próximo seguimiento" vacío / total deals abiertos</td></tr>
             <tr><td class="k">% cartera en mesa mensual</td><td>Clientes activos en mesa mensual / total clientes activos</td></tr>
           </tbody>
         </table>
@@ -524,40 +777,45 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
 
     <!-- 08 ROLES -->
     <section class="block" id="roles">
-      <div class="block-head"><span class="idx">08</span><h2>Roles y cadencias</h2></div>
+      <div class="block-head"><span class="idx">09</span><h2>Roles y cadencias</h2></div>
       <p class="block-sub">Quién es dueño de qué, y con qué frecuencia se revisa.</p>
 
       <div class="tbl-wrap">
         <table class="tbl">
           <thead><tr><th>Rol</th><th>Responsabilidad</th></tr></thead>
           <tbody>
-            <tr><td class="k">Comercial asignado</td><td>Dueño del contacto y del deal desde Prospecto hasta Closed Won/Closed Lost</td></tr>
+            <tr><td class="k">Comercial asignado</td><td>Dueño del contacto desde Prospecto; al confirmar Contacto SQL, crea y queda a cargo del negocio hasta Closed Won/Closed Lost</td></tr>
             <tr><td class="k">Responsable de diagnóstico</td><td>Releva unidades, instituciones financieras y estado de cartera durante la llamada de 30 minutos</td></tr>
+            <tr><td class="k">Gerencia</td><td>Crea la cotización/propuesta tras analizar el diagnóstico — no la genera la ejecutiva de ventas directamente</td></tr>
             <tr><td class="k">Dirección comercial</td><td>Revisa el pipeline y las listas activas de alerta en HubSpot</td></tr>
           </tbody>
         </table>
       </div>
 
       <div class="grid grid-2">
-        <div class="card"><h4>Cadencia semanal</h4><p>Revisión de pipeline comercial abierto + listas activas de alerta (propuestas sin respuesta, ICP alto sin trabajar).</p></div>
+        <div class="card"><h4>Cadencia semanal</h4><p>Trabajar la lista "MQL listos para Contacto SQL" + revisión de pipeline abierto + listas activas de alerta (propuestas sin respuesta, ICP alto sin trabajar).</p></div>
         <div class="card"><h4>Cadencia mensual</h4><p>Revisión de KPIs de funnel, mix de modalidad de servicio y motivos de pérdida con el equipo comercial.</p></div>
       </div>
     </section>
 
     <!-- 09 GLOSARIO -->
     <section class="block" id="glosario">
-      <div class="block-head"><span class="idx">09</span><h2>Glosario</h2></div>
+      <div class="block-head"><span class="idx">10</span><h2>Glosario</h2></div>
       <p class="block-sub">Términos propios de este sistema, para que todo el equipo hable igual.</p>
 
       <dl class="gloss">
-        <dt>MQL</dt><dd>Contacto que ya encajó en el ICP por datos (segmento, cargo, señales de volumen), antes de cualquier contacto humano.</dd>
-        <dt>Contacto SQL</dt><dd>Lead validado por una llamada o contacto directo de comercial, confirmando interés real y autoridad de decisión — recién ahí se agenda el diagnóstico.</dd>
+        <dt>MQL</dt><dd>Contacto que ya encajó en el ICP por segmento, antes de cualquier contacto humano y sin negocio creado. Vive en el objeto Contacto.</dd>
+        <dt>Cargo</dt><dd>Título del contacto, autoreportado en el formulario (7 opciones). Prioriza, pero no excluye ni confirma autoridad real.</dd>
+        <dt>Tomador de Decisión</dt><dd>Propiedad Sí/No que el comercial confirma en la llamada — es lo que realmente valida la autoridad de decisión, no el Cargo.</dd>
+        <dt>Contacto SQL</dt><dd>Lead validado por una llamada directa de comercial, confirmando Tomador de Decisión, interés real y urgencia. Es el momento en que se crea el negocio — primera etapa del pipeline.</dd>
+        <dt>Negocio</dt><dd>El deal en HubSpot. No existe antes de confirmarse el Contacto SQL — Prospecto y MQL son etapas del Contacto, no del negocio.</dd>
         <dt>ICP Score</dt><dd>Puntaje de 0 a 100 sobre qué tan bien encaja un contacto con el cliente ideal. ≥70 es alto ajuste.</dd>
-        <dt>Diagnóstico</dt><dd>Llamada gratuita de 30 minutos que releva número de unidades, instituciones financieras y estado de la cartera documental — la base de toda cotización.</dd>
-        <dt>Modalidad de servicio</dt><dd>Forma de cobro acordada tras el diagnóstico: por trámite, por proyecto o mesa mensual.</dd>
+        <dt>Diagnóstico</dt><dd>Llamada gratuita de 30 minutos que releva unidades en comercialización, instituciones financieras y estado de la cartera documental — la base de toda cotización.</dd>
+        <dt>Servicio</dt><dd>Propiedad de Negocio con la forma de cobro acordada tras el diagnóstico: por trámite, por proyecto o mesa mensual.</dd>
         <dt>Mesa mensual</dt><dd>Modalidad recurrente para clientes con portafolio de proyectos activos de forma continua.</dd>
-        <dt>Comercial asignado</dt><dd>Persona del equipo dueña del contacto/deal a lo largo de todo el pipeline comercial.</dd>
-        <dt>Canal de entrada</dt><dd>Origen del contacto: prospección outbound, inbound vía web/landing, o referido.</dd>
+        <dt>Comercial asignado</dt><dd>Persona del equipo dueña del contacto desde Prospecto, y del negocio desde que lo crea en Contacto SQL.</dd>
+        <dt>Canal de entrada</dt><dd>Origen del contacto: prospección outbound (Apollo, bases existentes), inbound vía web/landing, o referido.</dd>
+        <dt>Nomenclatura de negocios</dt><dd>Formato estándar para nombrar cada negocio: {Empresa} – {Alcance} – {Servicio}. Ver sección HubSpot.</dd>
       </dl>
     </section>
 
