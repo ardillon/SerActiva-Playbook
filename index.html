@@ -347,15 +347,15 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
 
       <div class="tracker-wrap">
         <div class="tracker">
-          <div class="stage"><div class="stage-node">1</div><div class="stage-name">Prospecto</div><div class="stage-prob">5%</div></div>
-          <div class="stage"><div class="stage-node">2</div><div class="stage-name">MQL</div><div class="stage-prob">15%</div></div>
-          <div class="stage"><div class="stage-node">3</div><div class="stage-name">Contacto SQL</div><div class="stage-prob">22%</div></div>
-          <div class="stage"><div class="stage-node">4</div><div class="stage-name">Diagnóstico agendado</div><div class="stage-prob">30%</div></div>
-          <div class="stage"><div class="stage-node">5</div><div class="stage-name">Diagnóstico realizado</div><div class="stage-prob">45%</div></div>
-          <div class="stage"><div class="stage-node">6</div><div class="stage-name">Propuesta enviada</div><div class="stage-prob">60%</div></div>
-          <div class="stage"><div class="stage-node">7</div><div class="stage-name">Negociación</div><div class="stage-prob">80%</div></div>
-          <div class="stage end"><div class="stage-node">✓</div><div class="stage-name">Ganado</div><div class="stage-prob">100%</div></div>
-          <div class="stage lost"><div class="stage-node">✕</div><div class="stage-name">Perdido</div><div class="stage-prob">0%</div></div>
+          <div class="stage"><div class="stage-node">1</div><div class="stage-name">Prospecto</div><div class="stage-prob">10%</div></div>
+          <div class="stage"><div class="stage-node">2</div><div class="stage-name">MQL</div><div class="stage-prob">20%</div></div>
+          <div class="stage"><div class="stage-node">3</div><div class="stage-name">Contacto SQL</div><div class="stage-prob">40%</div></div>
+          <div class="stage"><div class="stage-node">4</div><div class="stage-name">Diagnóstico agendado</div><div class="stage-prob">50%</div></div>
+          <div class="stage"><div class="stage-node">5</div><div class="stage-name">Diagnóstico realizado</div><div class="stage-prob">60%</div></div>
+          <div class="stage"><div class="stage-node">6</div><div class="stage-name">Propuesta enviada</div><div class="stage-prob">80%</div></div>
+          <div class="stage"><div class="stage-node">7</div><div class="stage-name">Negociación</div><div class="stage-prob">90%</div></div>
+          <div class="stage end"><div class="stage-node">✓</div><div class="stage-name">Closed Won</div><div class="stage-prob">100%</div></div>
+          <div class="stage lost"><div class="stage-node">✕</div><div class="stage-name">Closed Lost</div><div class="stage-prob">0%</div></div>
         </div>
       </div>
 
@@ -363,7 +363,7 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
         <div class="card"><h4>Prospecto → MQL</h4><p>Se confirma por datos que el contacto encaja en el ICP (segmento, cargo, señales de volumen) — sin haber hablado aún con nadie.</p></div>
         <div class="card"><h4>MQL → Contacto SQL</h4><p>Un comercial llama o escribe directamente para confirmar interés real, autoridad de decisión y urgencia. Ahí el lead deja de ser calificado solo por datos y pasa a estar calificado por ventas.</p></div>
         <div class="card"><h4>Contacto SQL → Diagnóstico realizado</h4><p>Con el SQL confirmado se agenda y se corre el diagnóstico gratuito de 30 minutos, que releva los datos que definen el precio. Sin diagnóstico realizado, no hay propuesta.</p></div>
-        <div class="card"><h4>Propuesta → Negociación → Ganado</h4><p>La propuesta ya incluye modalidad y precio definidos; la negociación ajusta alcance o condiciones, no el criterio de cotización.</p></div>
+        <div class="card"><h4>Propuesta → Negociación → Closed Won</h4><p>La propuesta ya incluye modalidad y precio definidos; la negociación ajusta alcance o condiciones, no el criterio de cotización.</p></div>
       </div>
 
       <div class="callout">
@@ -490,8 +490,8 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
             <tr><td class="k">Tasa SQL → Diagnóstico agendado</td><td>Diagnósticos agendados / Contactos SQL confirmados</td></tr>
             <tr><td class="k">Show rate del diagnóstico</td><td>Diagnósticos realizados / Diagnósticos agendados</td></tr>
             <tr><td class="k">Tasa Diagnóstico → Propuesta</td><td>Propuestas enviadas / Diagnósticos realizados</td></tr>
-            <tr><td class="k">Win rate</td><td>Deals ganados / (Ganados + Perdidos)</td></tr>
-            <tr><td class="k">Ciclo de venta</td><td>Días promedio de Prospecto a Ganado</td></tr>
+            <tr><td class="k">Win rate</td><td>Deals en Closed Won / (Closed Won + Closed Lost)</td></tr>
+            <tr><td class="k">Ciclo de venta</td><td>Días promedio de Prospecto a Closed Won</td></tr>
           </tbody>
         </table>
       </div>
@@ -531,7 +531,7 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
         <table class="tbl">
           <thead><tr><th>Rol</th><th>Responsabilidad</th></tr></thead>
           <tbody>
-            <tr><td class="k">Comercial asignado</td><td>Dueño del contacto y del deal desde Prospecto hasta Ganado/Perdido</td></tr>
+            <tr><td class="k">Comercial asignado</td><td>Dueño del contacto y del deal desde Prospecto hasta Closed Won/Closed Lost</td></tr>
             <tr><td class="k">Responsable de diagnóstico</td><td>Releva unidades, instituciones financieras y estado de cartera durante la llamada de 30 minutos</td></tr>
             <tr><td class="k">Dirección comercial</td><td>Revisa el pipeline y las listas activas de alerta en HubSpot</td></tr>
           </tbody>
