@@ -588,10 +588,6 @@ Armamos un expediente por unidad, con un responsable único hasta la inscripció
       <div class="block-head"><span class="idx">07</span><h2>HubSpot</h2></div>
       <p class="block-sub">Única fuente de información del proceso comercial. Prospecto y MQL viven en el Contacto; el negocio y su único pipeline arrancan en Contacto SQL.</p>
 
-      <div class="callout amber">
-        <p><strong>Los formularios de HubSpot no escriben en propiedades de Negocio</strong> — solo en Contacto, Empresa y Ticket. Por eso toda la data del formulario (proyecto, unidades, instituciones financieras) cae en el Contacto. Copiarla a Negocio requeriría un Workflow (Professional/Enterprise); en Starter no hay ganancia real en duplicarla a mano, así que se deja solo en Contacto.</p>
-      </div>
-
       <div class="toolcard">
         <h3>Pipeline "Comercial"</h3>
         <p class="role">5 etapas + Closed Won/Lost · arranca en Contacto SQL</p>
@@ -638,30 +634,6 @@ Armamos un expediente por unidad, con un responsable único hasta la inscripció
       </div>
 
       <div class="card" style="margin-top:20px">
-        <h4 style="margin-bottom:10px">Depuración aplicada (auditoría de hoy)</h4>
-        <div class="grid grid-2">
-          <div>
-            <p class="tag tag-red">Eliminadas</p>
-            <ul style="font-size:13px">
-              <li>Relación (Contacto) — 0 usos, nunca definida</li>
-              <li>Probabilidad (Negocio) — duplicaba la probabilidad nativa de etapa</li>
-              <li>Origen Del Lead (Negocio) — duplicaba Canal de entrada</li>
-              <li>Fecha de contacto SQL (Negocio) — duplicaba la fecha de creación del negocio</li>
-              <li>Fecha de diagnóstico agendado (Contacto) — el dato correcto es Fecha de Reunión, en Negocio</li>
-            </ul>
-          </div>
-          <div>
-            <p class="tag tag-amber">Archivada / a confirmar</p>
-            <ul style="font-size:13px">
-              <li><b>Requiere Implementación</b> (Negocio) — archivada, es de onboarding, fuera de alcance</li>
-              <li><b>WhatsApp</b> (Negocio) — a confirmar por qué el negocio necesita uno propio además del del contacto</li>
-              <li><b>Campaña</b> (Negocio) — a confirmar si se va a trackear activamente</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" style="margin-top:20px">
         <h4 style="margin-bottom:12px">Checklist de creación de negocio</h4>
         <p style="font-size:13px;color:var(--slate);margin-bottom:14px">Para la tarjeta del gestor al crear el negocio en Contacto SQL.</p>
         <div class="tbl-wrap">
@@ -670,7 +642,7 @@ Armamos un expediente por unidad, con un responsable único hasta la inscripció
             <thead><tr><th>Propiedad</th><th>Cómo se llena</th></tr></thead>
             <tbody>
               <tr><td class="k">Nombre del negocio</td><td>Manual, según la nomenclatura (ver abajo)</td></tr>
-              <tr><td class="k">Titular del negocio</td><td>Quien confirma el SQL y crea el negocio</td></tr>
+              <tr><td class="k">Propietario del negocio</td><td>Quien confirma el SQL y crea el negocio</td></tr>
               <tr><td class="k">Servicio</td><td>Estimado según Unidades en Comercialización del contacto</td></tr>
               <tr><td class="k">Próxima acción</td><td>Texto libre — qué sigue de inmediato</td></tr>
               <tr><td class="k">Próximo seguimiento</td><td>Fecha de revisión si no hay respuesta</td></tr>
@@ -710,18 +682,22 @@ Armamos un expediente por unidad, con un responsable único hasta la inscripció
 
       <div class="card" style="margin-top:20px">
         <h4 style="margin-bottom:4px">Información destacada</h4>
-        <p style="font-size:13px;color:var(--slate);margin-bottom:16px">Tarjeta "Destacados" (máx. 4 propiedades, columna central) + lista completa en la barra lateral. Personalizar la vista propia no requiere plan superior; fijarla como vista por defecto para todo el equipo requiere Professional o Enterprise.</p>
+        <p style="font-size:13px;color:var(--slate);margin-bottom:16px">Tarjeta "Destacados" (máx. 4 propiedades, columna central) + "Acerca de este registro" en la barra lateral (hasta 50). Personalizar la vista propia no requiere plan superior; fijarla como vista por defecto para todo el equipo requiere Professional o Enterprise.</p>
         <div class="grid grid-2">
           <div>
             <p class="subhead" style="margin-bottom:8px">Contacto</p>
             <p style="font-size:12.8px;color:var(--navy);opacity:.85;margin-bottom:8px"><b>Destacado (4):</b> ICP Score, Cargo, Último contacto, Comercial asignado</p>
-            <p style="font-size:12.8px;color:var(--navy);opacity:.85;margin:0"><b>Lista completa:</b> + Nombre, Empresa, Segmento de empresa, Tomador de Decisión, Canal de entrada, Fecha MQL, Preferencia de comunicación, Teléfono, Email, LinkedIn</p>
+            <p style="font-size:12.8px;color:var(--navy);opacity:.85;margin:0"><b>Acerca de este contacto:</b> + Nombre, Empresa, Segmento de empresa, Tomador de Decisión, Canal de entrada, Fecha MQL, Preferencia de comunicación, Teléfono, Email, LinkedIn</p>
           </div>
           <div>
             <p class="subhead" style="margin-bottom:8px">Negocio</p>
             <p style="font-size:12.8px;color:var(--navy);opacity:.85;margin-bottom:8px"><b>Destacado (4):</b> Etapa, Servicio, Monto, Próximo seguimiento</p>
-            <p style="font-size:12.8px;color:var(--navy);opacity:.85;margin:0"><b>Lista completa:</b> + Nombre del negocio, Titular del negocio, Fecha de reunión, Fecha de propuesta, Próxima acción, Prioridad, Motivo de pérdida, Fecha de cierre</p>
+            <p style="font-size:12.8px;color:var(--navy);opacity:.85;margin:0"><b>Acerca de este negocio</b> <span style="opacity:.65">(ya configurada así):</span> Propietario del negocio, Último contacto, Fecha de cierre estimada, Prioridad, Servicio, Próxima Acción, Próximo Seguimiento, Motivo de cierre perdido</p>
           </div>
+        </div>
+        <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--line-soft)">
+          <p class="subhead" style="margin-bottom:8px">Tarjeta de asociación (Negocio → Contacto)</p>
+          <p style="font-size:12.8px;color:var(--navy);opacity:.85;margin:0">Así es como el negocio ve, sin salir de la página, los datos que el formulario dejó en el contacto: Nombre, Apellidos, Empresa, Teléfono, Correo, Cargo, ICP Score, Fecha MQL, Canal de entrada, Nombre del Proyecto, Unidades en Comercialización, Instituciones Financieras, Etapa del Proyecto, ¿Qué necesita resolver primero?</p>
         </div>
       </div>
     </section>
