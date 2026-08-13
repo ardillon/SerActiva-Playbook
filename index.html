@@ -326,6 +326,7 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
             <tr><td class="k">Señal de volumen</td><td>Unidades en Comercialización + Instituciones Financieras (ambas propiedades de Contacto)</td></tr>
             <tr><td class="k">Canal de entrada</td><td>Apollo y bases de datos existentes (outbound), inbound vía web/landing, o referidos</td></tr>
             <tr><td class="k">Tomador de Decisión</td><td>Sí / No — se confirma en la llamada, no en el formulario. Define el paso a Contacto SQL, no el Cargo</td></tr>
+            <tr><td class="k">Planificación financiera</td><td>Se confirma en la misma llamada — el proyecto debe tener el financiamiento planificado, no solo intención de venta. Sin esto, no hay Contacto SQL</td></tr>
           </tbody>
         </table>
       </div>
@@ -394,6 +395,9 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
       </div>
 
       <p class="subhead">Fase 1 — Objeto Contacto (todavía sin negocio)</p>
+      <div class="callout">
+        <p><strong>La investigación de Apollo se sube a HubSpot como Contactos, no como negocios.</strong> Ahí corre la secuencia de prospección (sección 04) — por correo y WhatsApp — hasta que el comercial confirma Contacto SQL. Solo en ese momento se crea el negocio y entra al pipeline de ventas.</p>
+      </div>
       <div class="tracker-wrap">
         <div class="tracker" style="min-width:320px">
           <div class="stage"><div class="stage-node">1</div><div class="stage-name">Prospecto</div><div class="stage-prob">Apollo / bases / inbound</div></div>
@@ -420,7 +424,7 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
 
       <div class="grid grid-2">
         <div class="card"><h4>Prospecto → MQL <span style="opacity:.6;font-weight:500">(Contacto)</span></h4><p>Se confirma por datos que el contacto encaja en el ICP (segmento, cargo) — sin haber hablado aún con nadie ni existir negocio.</p></div>
-        <div class="card"><h4>MQL → Contacto SQL <span style="opacity:.6;font-weight:500">(nace el negocio)</span></h4><p>Un comercial trabaja la lista y llama o escribe directamente. Si la persona confirma ser Tomador de Decisión (o conecta con quien sí lo es) y muestra interés real y urgencia, se crea el negocio.</p></div>
+        <div class="card"><h4>MQL → Contacto SQL <span style="opacity:.6;font-weight:500">(nace el negocio)</span></h4><p>Un comercial trabaja la lista y llama o escribe directamente. Si la persona confirma ser Tomador de Decisión (o conecta con quien sí lo es), el proyecto tiene planificación financiera, y muestra interés real y urgencia, se crea el negocio.</p></div>
         <div class="card"><h4>Contacto SQL → Diagnóstico realizado</h4><p>Con el negocio creado se agenda y se corre el diagnóstico gratuito de 30 minutos, que releva los datos que definen el precio. Sin diagnóstico realizado, no hay propuesta.</p></div>
         <div class="card"><h4>Diagnóstico → Propuesta <span style="opacity:.6;font-weight:500">(la arma Gerencia)</span></h4><p>La ejecutiva releva los datos; Gerencia analiza y construye la cotización antes de pasar a "Propuesta enviada".</p></div>
         <div class="card"><h4>Propuesta → Negociación → Closed Won</h4><p>La propuesta ya incluye modalidad y precio definidos; la negociación ajusta alcance o condiciones, no el criterio de cotización.</p></div>
@@ -438,11 +442,12 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
     <!-- 04 SECUENCIAS DE PROSPECCIÓN -->
     <section class="block" id="secuencias">
       <div class="block-head"><span class="idx">04</span><h2>Secuencias de prospección</h2></div>
-      <p class="block-sub">Hasta 3 intentos por correo para activar un prospecto recién ingresado (Apollo, bases existentes, inbound), uno por cada segmento del ICP. Objetivo: conseguir el sí para el diagnóstico gratuito o, al menos, dejar la puerta abierta.</p>
+      <p class="block-sub">Hasta 3 intentos por correo y por WhatsApp para activar un prospecto recién ingresado (Apollo, bases existentes, inbound), uno por cada segmento del ICP. Objetivo: conseguir el sí para el diagnóstico gratuito o, al menos, dejar la puerta abierta.</p>
 
       <div class="seq-segment">
         <div class="seq-segment-head"><span class="seq-emoji">🏗️</span><h3>Constructora</h3></div>
 
+        <p class="subhead">Correo</p>
         <div class="seq-step">
           <p class="seq-meta">Intento 1 · Día 0</p>
           <p class="seq-subject">Asunto: Escrituración sin cuellos de botella para {{Proyecto}}</p>
@@ -466,11 +471,26 @@ En SerActiva llevamos +20 años en esto: un expediente por unidad, un responsabl
           <p class="seq-subject">Asunto: Cierro el tema por ahora</p>
           <p class="seq-body">Hola {{Nombre}}, no quiero insistir de más. Si en algún momento la escrituración de {{Proyecto}} se vuelve un dolor de cabeza, quedo disponible para el diagnóstico gratuito. Éxitos con el proyecto.</p>
         </div>
+
+        <p class="subhead" style="margin-top:18px">WhatsApp</p>
+        <div class="seq-step">
+          <p class="seq-meta">Intento 1 · Día 0</p>
+          <p class="seq-body">Hola {{Nombre}}, vi que {{Empresa}} tiene unidades en comercialización. Ayudamos a constructoras a evitar que la escrituración se atasque por documentos o por trabajar con varias instituciones financieras a la vez. ¿Tienes 30 min esta semana para un diagnóstico gratuito? Te digo justo dónde se te pueden atascar los cierres.</p>
+        </div>
+        <div class="seq-step">
+          <p class="seq-meta">Intento 2 · Día 3</p>
+          <p class="seq-body">Hola {{Nombre}}, seré breve 🙂 Si {{Proyecto}} entrega unidades este semestre, vale la pena revisar antes la cartera documental y las instituciones financieras involucradas. 30 min sin costo, ¿martes o miércoles?</p>
+        </div>
+        <div class="seq-step">
+          <p class="seq-meta close">Intento 3 · Día 7 (cierre)</p>
+          <p class="seq-body">Hola {{Nombre}}, no quiero insistir de más. Si la escrituración de {{Proyecto}} se vuelve un dolor de cabeza, aquí estoy para el diagnóstico gratuito. Éxitos con el proyecto 👍</p>
+        </div>
       </div>
 
       <div class="seq-segment">
         <div class="seq-segment-head"><span class="seq-emoji">🏢</span><h3>Inmobiliaria</h3></div>
 
+        <p class="subhead">Correo</p>
         <div class="seq-step">
           <p class="seq-meta">Intento 1 · Día 0</p>
           <p class="seq-subject">Asunto: Cierra ventas más rápido, sin perder comisión por trámites</p>
@@ -492,11 +512,26 @@ En SerActiva coordinamos ese proceso completo — comprador, institución financ
           <p class="seq-subject">Asunto: Última nota</p>
           <p class="seq-body">Hola {{Nombre}}, entiendo que ahora no sea prioridad. Dejo la puerta abierta para el diagnóstico gratuito cuando les convenga. Éxitos con las ventas del semestre.</p>
         </div>
+
+        <p class="subhead" style="margin-top:18px">WhatsApp</p>
+        <div class="seq-step">
+          <p class="seq-meta">Intento 1 · Día 0</p>
+          <p class="seq-body">Hola {{Nombre}}, cuando una venta ya está cerrada pero la escrituración se demora, el riesgo es real: comprador que se enfría, comisión que se atrasa. Coordinamos todo el proceso — comprador, institución financiera y registro. ¿Agendamos 30 min de diagnóstico gratuito?</p>
+        </div>
+        <div class="seq-step">
+          <p class="seq-meta">Intento 2 · Día 3</p>
+          <p class="seq-body">Hola {{Nombre}}, ¿cuántas unidades tienen hoy en proceso de escrituración? Si son varias con distintas instituciones financieras, seguro ya sienten la fricción. 30 min esta semana, sin costo.</p>
+        </div>
+        <div class="seq-step">
+          <p class="seq-meta close">Intento 3 · Día 7 (cierre)</p>
+          <p class="seq-body">Hola {{Nombre}}, entiendo que ahora no sea prioridad. Quedo disponible para el diagnóstico gratuito cuando les convenga. Éxitos con las ventas del semestre 👍</p>
+        </div>
       </div>
 
       <div class="seq-segment">
         <div class="seq-segment-head"><span class="seq-emoji">🏘️</span><h3>Promotora</h3></div>
 
+        <p class="subhead">Correo</p>
         <div class="seq-step">
           <p class="seq-meta">Intento 1 · Día 0</p>
           <p class="seq-subject">Asunto: Un solo proceso de escrituración para todos tus proyectos</p>
@@ -518,6 +553,20 @@ Armamos un expediente por unidad, con un responsable único hasta la inscripció
           <p class="seq-subject">Asunto: Cierro por ahora</p>
           <p class="seq-body">Hola {{Nombre}}, no quiero saturar tu bandeja. Cuando la coordinación entre proyectos se vuelva un tema, con gusto retomamos el diagnóstico gratuito. Éxitos con la cartera de proyectos.</p>
         </div>
+
+        <p class="subhead" style="margin-top:18px">WhatsApp</p>
+        <div class="seq-step">
+          <p class="seq-meta">Intento 1 · Día 0</p>
+          <p class="seq-body">Hola {{Nombre}}, coordinar escrituración entre varios constructores socios y varias instituciones financieras suele ser el punto ciego de una promotora. Armamos un expediente por unidad, con un responsable único hasta la inscripción. ¿30 min para un diagnóstico gratuito?</p>
+        </div>
+        <div class="seq-step">
+          <p class="seq-meta">Intento 2 · Día 3</p>
+          <p class="seq-body">Hola {{Nombre}}, si manejan más de un proyecto activo, seguro ya notaron que cada socio y cada institución trabaja distinto. El diagnóstico gratuito de 30 min les da una foto clara de dónde están parados.</p>
+        </div>
+        <div class="seq-step">
+          <p class="seq-meta close">Intento 3 · Día 7 (cierre)</p>
+          <p class="seq-body">Hola {{Nombre}}, no quiero saturarte. Cuando la coordinación entre proyectos se vuelva un tema, con gusto retomamos el diagnóstico gratuito. Éxitos con la cartera de proyectos 👍</p>
+        </div>
       </div>
     </section>
 
@@ -527,11 +576,12 @@ Armamos un expediente por unidad, con un responsable único hasta la inscripció
       <p class="block-sub">El diagnóstico de 30 minutos es el paso que convierte una conversación en una cotización real.</p>
 
       <div class="card" style="margin-bottom:22px">
-        <h4 style="margin-bottom:10px">El diagnóstico releva tres datos</h4>
-        <div class="grid grid-3">
+        <h4 style="margin-bottom:10px">El diagnóstico releva cuatro datos</h4>
+        <div class="grid grid-2">
           <div><p class="tag tag-gold">1</p><p style="font-size:14px"><b>Unidades en comercialización</b> del proyecto (rango, ya en el Contacto desde el formulario)</p></div>
           <div><p class="tag tag-gold">2</p><p style="font-size:14px"><b>Instituciones financieras</b> involucradas: banca privada, mutualista, cooperativa o BIESS</p></div>
           <div><p class="tag tag-gold">3</p><p style="font-size:14px"><b>Estado de la cartera documental</b> del proyecto y de los compradores</p></div>
+          <div><p class="tag tag-gold">4</p><p style="font-size:14px"><b>Planificación financiera</b> del proyecto — confirma que no es solo intención de venta</p></div>
         </div>
       </div>
 
