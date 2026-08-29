@@ -328,6 +328,10 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
       <div class="block-head"><span class="idx">02</span><h2>Cliente ideal (ICP)</h2></div>
       <p class="block-sub">El segmento es lo único que excluye para pasar a MQL. Cargo y volumen no bloquean — alimentan el ICP Score, y la autoridad real de decisión se confirma después, en la llamada.</p>
 
+      <div class="callout">
+        <p><strong>Primer paso de calificación: el Perfil.</strong> Antes de evaluar segmento, volumen o cualquier otro criterio, se determina si el contacto es <b>Perfil A</b> (mandos altos gerenciales) o <b>Perfil B</b> (mandos medios operativos/administrativos) según su Cargo — ver tabla abajo. Esto es lo primero que se registra, porque define qué secuencia de prospección recibe.</p>
+      </div>
+
       <div class="tbl-wrap">
         <table class="tbl">
           <thead><tr><th>Criterio</th><th>Qué buscamos</th></tr></thead>
@@ -367,6 +371,7 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
           <caption>Campos mínimos para pasar de Nuevo Lead a MQL</caption>
           <thead><tr><th>Campo</th><th>Tipo</th><th>Condición</th></tr></thead>
           <tbody>
+            <tr><td class="k">Perfil (A/B)</td><td>Primer paso</td><td>Se determina por el Cargo — Alta prioridad = Perfil A, Media/operativo = Perfil B</td></tr>
             <tr><td class="k">Segmento de empresa</td><td>Excluyente</td><td>Constructora, inmobiliaria o promotora</td></tr>
             <tr><td class="k">Cargo</td><td>Se registra</td><td>Cualquiera de las 7 opciones — no excluye</td></tr>
             <tr><td class="k">Canal de entrada</td><td>Se registra</td><td>Origen documentado: Apollo, bases existentes, inbound o referido</td></tr>
@@ -482,36 +487,34 @@ details.faq .a{font-size:14px;color:var(--navy);opacity:.85;margin-top:10px;max-
         <p class="subhead">Correo</p>
         <div class="seq-step">
           <p class="seq-meta">Intento 1 · Día 0</p>
-          <p class="seq-subject">Asunto: ¿Cuánto flujo de caja tienes atrapado en escrituración?</p>
-          <p class="seq-body">Hola {{Nombre}}, en la mayoría de constructoras e inmobiliarias el cierre comercial ya pasó — pero el dinero sigue atrapado mientras la escrituración se atasca por documentos o por coordinar varias instituciones financieras a la vez.
+          <p class="seq-subject">Asunto: ¿Cuánto flujo de caja tiene retenido por demora en la escrituración?</p>
+          <p class="seq-body">Hola {{Nombre}}, aun cuando el cierre comercial ya pasó —el dinero de la venta sigue retenido porque la escrituración se atasca por documentos o por la coordinación inadecuada con varias instituciones financieras a la vez.
 
-En SerActiva llevamos +20 años resolviendo justo eso: un expediente por unidad, un responsable hasta la inscripción, sin que tengas que estar encima.
-
-¿15 minutos esta semana para un diagnóstico gratuito? Te muestro dónde se te está atascando el flujo de caja, antes de que sea un problema mayor.</p>
+En SerActiva llevamos +6 años resolviendo justo eso: un expediente por unidad, un responsable hasta la inscripción, un proceso monitoreado con medidores de tiempo y eficiencia en tiempo real, sin que tengas que perseguir al abogado. Le mostramos cómo salir del atasco que afecta al flujo de caja, antes de que sea un problema mayor.</p>
         </div>
         <div class="seq-step">
           <p class="seq-meta">Intento 2 · Día 3</p>
-          <p class="seq-subject">Asunto: Re: flujo de caja atrapado en escrituración</p>
-          <p class="seq-body">Hola {{Nombre}}, seré breve. Si tienes unidades vendidas esperando escrituración, cada semana de atraso es flujo de caja que no entra. 15 minutos, sin costo, para ver exactamente dónde está el cuello de botella. ¿Martes o miércoles?</p>
+          <p class="seq-subject">Asunto: Re: flujo de caja retenido por demora en la escrituración</p>
+          <p class="seq-body">Hola {{Nombre}}, seré breve. Si tiene unidades vendidas esperando escrituración, cada semana de atraso es dinero que no entra a caja. 15 minutos, sin costo, para ver exactamente cómo salir del cuello de botella. ¿Martes o miércoles? Usted diga la hora.</p>
         </div>
         <div class="seq-step">
           <p class="seq-meta close">Intento 3 · Día 7 (cierre)</p>
           <p class="seq-subject">Asunto: Cierro el tema por ahora</p>
-          <p class="seq-body">Hola {{Nombre}}, no quiero insistir de más. Si en algún momento la escrituración se vuelve un freno para tu flujo de caja, quedo disponible para el diagnóstico gratuito. Éxitos con la operación.</p>
+          <p class="seq-body">Hola {{Nombre}}, no quiero insistir más. Si en algún momento la escrituración se vuelve un freno para su flujo de caja, quedo disponible para el diagnóstico gratuito. Éxitos con la operación.</p>
         </div>
 
         <p class="subhead" style="margin-top:18px">WhatsApp</p>
         <div class="seq-step">
           <p class="seq-meta">Intento 1 · Día 0</p>
-          <p class="seq-body">Hola {{Nombre}}, ¿cuánto flujo de caja tienes hoy atrapado esperando escrituración? Ayudamos a constructoras e inmobiliarias a destrabar eso sin que tengan que meterse en el detalle operativo. ¿15 min esta semana para un diagnóstico gratuito?</p>
+          <p class="seq-body">Hola {{Nombre}}, ¿cuánto flujo de caja tiene hoy atrapado esperando terminar la escrituración? Ayudamos a constructoras e inmobiliarias a destrabar eso sin que tengan que meterse en el detalle operativo. ¿15 min esta semana para un diagnóstico gratuito?</p>
         </div>
         <div class="seq-step">
           <p class="seq-meta">Intento 2 · Día 3</p>
-          <p class="seq-body">Hola {{Nombre}}, seré breve 🙂 Cada semana de atraso en escrituración es flujo de caja que no entra. 15 min sin costo, ¿martes o miércoles?</p>
+          <p class="seq-body">Hola {{Nombre}}, seré breve 🙂 Cada día de atraso en la escrituración es flujo de caja que no rinde. 15 min sin costo, ¿martes o miércoles?</p>
         </div>
         <div class="seq-step">
           <p class="seq-meta close">Intento 3 · Día 7 (cierre)</p>
-          <p class="seq-body">Hola {{Nombre}}, no quiero insistir de más. Si la escrituración se vuelve un freno para el flujo de caja, aquí estoy para el diagnóstico gratuito. Éxitos con la operación 👍</p>
+          <p class="seq-body">Hola {{Nombre}}, no quiero insistir de más. Si la escrituración se vuelve un dolor de cabeza para el flujo de caja, aquí estoy para el diagnóstico gratuito. Éxitos con la operación 👍</p>
         </div>
       </div>
 
@@ -522,36 +525,36 @@ En SerActiva llevamos +20 años resolviendo justo eso: un expediente por unidad,
         <p class="subhead">Correo</p>
         <div class="seq-step">
           <p class="seq-meta">Intento 1 · Día 0</p>
-          <p class="seq-subject">Asunto: Un checklist menos que perseguir por unidad</p>
-          <p class="seq-body">Hola {{Nombre}}, sé lo que implica coordinar escrituración: perseguir documentos de compradores, cuadrar tiempos con varias instituciones financieras, y responder "¿cómo va mi unidad?" sin tener siempre la respuesta a mano.
+          <p class="seq-subject">Asunto: Un ✓ en el checklist, una preocupación menos que atender</p>
+          <p class="seq-body">Hola {{Nombre}}, sabemos lo que implica coordinar la escrituración: obtener documentos de compradores, cuadrar tiempos con varias instituciones financieras, y responder "¿cómo va mi trámite?" sin tener siempre la respuesta a mano.
 
-En SerActiva armamos un expediente por unidad, con checklist documental claro desde el inicio y un responsable único hasta la inscripción — para que dejes de perseguir y empieces a hacer seguimiento.
+En SerActiva armamos un expediente por unidad, con checklist documental claro desde el inicio y un responsable único hasta la inscripción — para que dejes de perseguir y empieces a hacer seguimiento en tiempo real a través de recursos tecnológicos fáciles de manejar que se los facilitamos sin costo.
 
-¿15 minutos esta semana para un diagnóstico gratuito? Te muestro cómo se vería ese proceso ordenado.</p>
+¿15 minutos esta semana para un diagnóstico gratuito? Le mostramos cómo se vería ese proceso ordenado.</p>
         </div>
         <div class="seq-step">
           <p class="seq-meta">Intento 2 · Día 3</p>
-          <p class="seq-subject">Asunto: Re: un checklist menos que perseguir</p>
-          <p class="seq-body">Hola {{Nombre}}, ¿cuántas unidades tienes hoy en proceso, y con cuántas instituciones financieras distintas? Si son varias, seguro ya sientes la fricción de coordinarlo todo a mano. 15 minutos, sin costo, esta semana.</p>
+          <p class="seq-subject">Asunto: Re: un checklist hecho, algo menos que perseguir</p>
+          <p class="seq-body">Hola {{Nombre}}, ¿cuántas unidades tiene hoy en proceso de escrituración, y con cuántas instituciones financieras distintas? Si son varias, seguro ya siente la fricción de coordinarlo todo a mano. 15 minutos, sin costo, esta semana y le mostramos cómo lo hace Seractiva en menos tiempo.</p>
         </div>
         <div class="seq-step">
           <p class="seq-meta close">Intento 3 · Día 7 (cierre)</p>
           <p class="seq-subject">Asunto: Cierro por ahora</p>
-          <p class="seq-body">Hola {{Nombre}}, no quiero saturar tu bandeja. Cuando la coordinación documental se vuelva un dolor de cabeza, aquí estoy para el diagnóstico gratuito. Éxitos con el día a día.</p>
+          <p class="seq-body">Hola {{Nombre}}, no quiero saturar su bandeja. Cuando la coordinación documental se vuelva un dolor de cabeza, aquí estoy para el diagnóstico gratuito. Éxitos con el día a día.</p>
         </div>
 
         <p class="subhead" style="margin-top:18px">WhatsApp</p>
         <div class="seq-step">
           <p class="seq-meta">Intento 1 · Día 0</p>
-          <p class="seq-body">Hola {{Nombre}}, sabemos lo que es perseguir documentos de compradores y coordinar varias instituciones financieras a la vez. Armamos un expediente por unidad con checklist claro y un responsable único. ¿15 min para un diagnóstico gratuito?</p>
+          <p class="seq-body">Hola {{Nombre}}, sabemos lo que es perseguir a los compradores por sus documentos y coordinar con varias instituciones financieras a la vez. Armamos un expediente por unidad con checklist claro y un responsable único. Todo controlado en tiempo real a través de IA especializada y diseñada para estos procesos. ¿15 min para un diagnóstico gratuito?</p>
         </div>
         <div class="seq-step">
           <p class="seq-meta">Intento 2 · Día 3</p>
-          <p class="seq-body">Hola {{Nombre}}, ¿cuántas unidades manejas hoy y con cuántas instituciones financieras? Si son varias, seguro sientes la fricción. 15 min sin costo esta semana.</p>
+          <p class="seq-body">Hola {{Nombre}}, ¿cuántas de sus unidades se están vendiendo hoy y con cuántas instituciones financieras? Si son varias, seguro siente la fricción y la demora. 15 min sin costo esta semana.</p>
         </div>
         <div class="seq-step">
           <p class="seq-meta close">Intento 3 · Día 7 (cierre)</p>
-          <p class="seq-body">Hola {{Nombre}}, no quiero saturarte. Cuando la coordinación documental sea un tema, con gusto retomamos el diagnóstico gratuito. Éxitos con el día a día 👍</p>
+          <p class="seq-body">Hola {{Nombre}}, no quiero saturarte. Cuando la coordinación documental sea un tema, con gusto retomo el diagnóstico gratuito. Éxitos con el día a día 👍</p>
         </div>
       </div>
 
@@ -592,15 +595,15 @@ En SerActiva armamos un expediente por unidad, con checklist documental claro de
           <caption>Modalidades de servicio (se formalizan al construir la Propuesta, ya con el negocio creado)</caption>
           <thead><tr><th>Modalidad</th><th>Cuándo se usa</th><th>Recurrencia</th></tr></thead>
           <tbody>
-            <tr><td class="k">Por trámite</td><td>Gancho comercial de entrada: compromiso mínimo para conseguir el primer sí, no el objetivo de la cotización</td><td>Ninguna — táctica de entrada</td></tr>
-            <tr><td class="k">Por proyecto</td><td>Un proyecto completo con número de unidades ya definido</td><td>Media</td></tr>
-            <tr><td class="k">Mesa mensual</td><td>Portafolio de proyectos activos de forma continua</td><td>Alta — objetivo comercial real</td></tr>
+            <tr><td class="k">Por Proceso</td><td>Gancho comercial de entrada: compromiso mínimo para conseguir el primer sí, no el objetivo de la cotización</td><td>Ninguna — táctica de entrada</td></tr>
+            <tr><td class="k">Por Proyecto</td><td>Un proyecto completo con número de unidades ya definido</td><td>Media</td></tr>
+            <tr><td class="k">Mix: Mesa mensual de asesoría legal + procesos</td><td>Portafolio de proyectos activos de forma continua</td><td>Alta — objetivo comercial real</td></tr>
           </tbody>
         </table>
       </div>
 
       <div class="callout">
-        <p><strong>"Por trámite" es un gancho, no un destino.</strong> Se ofrece para bajar la barrera de entrada en el primer acercamiento. En cuanto el diagnóstico revela volumen real (varias unidades o un portafolio activo), la propuesta debe empujar hacia "Por proyecto" o "Mesa mensual".</p>
+        <p><strong>"Por Proceso" es un gancho, no un destino.</strong> Se ofrece para bajar la barrera de entrada en el primer acercamiento. En cuanto el diagnóstico revela volumen real (varias unidades o un portafolio activo), la propuesta debe empujar hacia "Por Proyecto" o "Mix: Mesa mensual + procesos".</p>
       </div>
 
       <div class="callout amber">
@@ -615,19 +618,19 @@ En SerActiva armamos un expediente por unidad, con checklist documental claro de
 
       <details class="faq" open>
         <summary>¿Cómo se cobra el servicio?</summary>
-        <div class="a">Por trámite, por proyecto o como mesa mensual, según volumen y modalidad. El precio se define después del diagnóstico, cuando ya conocemos el número de unidades, las instituciones involucradas y el estado de la cartera. No se cotiza a ciegas.</div>
+        <div class="a">Por proceso, por proyecto o como mesa mensual más los procesos contratados. El precio es competitivo, real y acorde al mercado, sin limitación del uso de nuestros recursos tecnológicos. No se cotiza a ciegas.</div>
       </details>
       <details class="faq">
         <summary>¿Qué pasa si faltan documentos del comprador?</summary>
-        <div class="a">Es el motivo más frecuente de retraso, y se anticipa desde el diagnóstico: la propuesta ya deja claro qué documentos deberá reunir cada comprador antes de iniciar el trámite, para que no sea una sorpresa después de firmar.</div>
+        <div class="a">De inicio realizamos un Visado Legal, en fondo y forma por cliente. Al detectar faltantes, se activa nuestro sistema de alerta y seguimiento: la responsable a cargo establece el contacto con cada comprador, asesora antes de iniciar el trámite y explica sobre lo pendiente, para que no sea una sorpresa después o un problema.</div>
       </details>
       <details class="faq">
         <summary>¿Atienden al comprador individual de un departamento?</summary>
-        <div class="a">No directamente. Si es comprador final, su trámite se gestiona a través de la constructora del proyecto; ella recibe el estado de su expediente por ese canal.</div>
+        <div class="a">No directamente. Si es comprador final, su trámite se gestiona a través de la constructora del proyecto; con quien se coordina el estado de su expediente por ese canal.</div>
       </details>
       <details class="faq">
         <summary>¿Por qué varían tanto los tiempos entre unidades?</summary>
-        <div class="a">Cada institución financiera tiene requisitos y plazos distintos, y el expediente se arma según la que financia cada unidad — por eso dos unidades del mismo proyecto pueden avanzar a ritmos diferentes.</div>
+        <div class="a">Cada institución financiera tiene requisitos y plazos distintos, y el expediente se arma según la que financia cada unidad — por eso dos unidades del mismo proyecto pueden avanzar a ritmos diferentes en lo que concierne a la gestión interna en la entidad; para nosotros el proceso y su atención es el mismo.</div>
       </details>
 
       <div class="callout">
@@ -698,7 +701,7 @@ En SerActiva armamos un expediente por unidad, con checklist documental claro de
             <h5>Propiedades de negocio</h5>
             <ul>
               <li><b>Monto</b> <span style="opacity:.65">(nativo — Amount)</span></li>
-              <li><b>Servicio</b> — trámite / proyecto / mesa mensual</li>
+              <li><b>Servicio</b> — proceso / proyecto / mix mesa mensual + procesos</li>
               <li><b>Motivo de pérdida</b></li>
               <li><b>Fecha de propuesta</b> — alimenta el KPI de antigüedad</li>
               <li><b>Fecha de reunión</b></li>
@@ -711,7 +714,7 @@ En SerActiva armamos un expediente por unidad, con checklist documental claro de
           <ul style="columns:2;gap:24px">
             <li>Constructoras ICP alto (≥ 70)</li>
             <li>Propuestas enviadas sin respuesta</li>
-            <li>Deals en modalidad mesa mensual</li>
+            <li>Deals en modalidad Mix Mesa mensual + procesos</li>
             <li>Deals perdidos por precio</li>
           </ul>
         </div>
@@ -763,19 +766,19 @@ En SerActiva armamos un expediente por unidad, con checklist documental claro de
           <table class="tbl">
             <thead><tr><th>Servicio</th><th>Alcance</th></tr></thead>
             <tbody>
-              <tr><td class="k">Trámite</td><td>Nombre corto del trámite, o "Trámite suelto" si no aplica</td></tr>
+              <tr><td class="k">Proceso</td><td>Nombre corto del proceso, o "Proceso suelto" si no aplica</td></tr>
               <tr><td class="k">Proyecto</td><td>Nombre del Proyecto (copiado del Contacto)</td></tr>
-              <tr><td class="k">Mesa mensual</td><td>"Portafolio activo"</td></tr>
+              <tr><td class="k">Mix: Mesa mensual + procesos</td><td>"Portafolio activo"</td></tr>
             </tbody>
           </table>
         </div>
         <p style="font-size:13.5px;margin-bottom:6px"><b>Ejemplos:</b></p>
         <ul style="font-size:13.5px;margin-bottom:12px">
           <li class="mono">Constructora Andina – Bosques del Valle – Proyecto</li>
-          <li class="mono">Grupo Cumbayá Homes – Portafolio activo – Mesa mensual</li>
-          <li class="mono">Inversiones del Valle – Trámite suelto – Trámite</li>
+          <li class="mono">Grupo Cumbayá Homes – Portafolio activo – Mix Mesa mensual</li>
+          <li class="mono">Inversiones del Valle – Proceso suelto – Proceso</li>
         </ul>
-        <p style="font-size:13.5px;margin:0"><b>Desambiguación:</b> si ya existe un negocio abierto con el mismo nombre exacto, se agrega mes y año — ej. <span class="mono">"Inversiones del Valle – Trámite suelto (ago 2026) – Trámite"</span>.</p>
+        <p style="font-size:13.5px;margin:0"><b>Desambiguación:</b> si ya existe un negocio abierto con el mismo nombre exacto, se agrega mes y año — ej. <span class="mono">"Inversiones del Valle – Proceso suelto (ago 2026) – Proceso"</span>.</p>
       </div>
 
       <div class="card" style="margin-top:20px">
@@ -880,7 +883,7 @@ En SerActiva armamos un expediente por unidad, con checklist documental claro de
           <tbody>
             <tr><td class="k">ICP Score promedio</td><td>Promedio de ICP Score del contacto asociado a negocios abiertos</td></tr>
             <tr><td class="k">% negocios con ICP ≥70</td><td>Negocios cuyo contacto tiene ICP alto / total de negocios abiertos</td></tr>
-            <tr><td class="k">Mix de modalidad</td><td>% y facturación por trámite / proyecto / mesa mensual</td></tr>
+            <tr><td class="k">Mix de modalidad</td><td>% y facturación por proceso / proyecto / mix mesa mensual + procesos</td></tr>
             <tr><td class="k">Ranking de motivos de pérdida</td><td>Conteo de negocios perdidos por motivo</td></tr>
           </tbody>
         </table>
@@ -895,7 +898,7 @@ En SerActiva armamos un expediente por unidad, con checklist documental claro de
             <tr><td class="k">Negocios activos por comercial</td><td>Conteo de negocios abiertos agrupado por Propietario del negocio</td></tr>
             <tr><td class="k">Antigüedad de propuestas sin respuesta</td><td>Días desde "Fecha de propuesta" para negocios en esa lista activa</td></tr>
             <tr><td class="k">% negocios sin próximo seguimiento</td><td>Negocios abiertos con "Próximo seguimiento" vacío / total abiertos</td></tr>
-            <tr><td class="k">% cartera en mesa mensual</td><td>Clientes activos en mesa mensual / total clientes activos</td></tr>
+            <tr><td class="k">% cartera en Mix Mesa mensual</td><td>Clientes activos en Mix Mesa mensual / total clientes activos</td></tr>
           </tbody>
         </table>
       </div>
@@ -957,8 +960,8 @@ En SerActiva armamos un expediente por unidad, con checklist documental claro de
         <dt>No calificado</dt><dd>Estado del Lead cuando el diagnóstico confirma que no hay oportunidad comercial real. No se crea negocio.</dd>
         <dt>ICP Score</dt><dd>Puntaje de 0 a 100 sobre qué tan bien encaja un contacto con el cliente ideal. ≥70 es alto ajuste.</dd>
         <dt>Diagnóstico</dt><dd>Llamada gratuita de 15 minutos que releva unidades en comercialización, instituciones financieras, cartera documental y planificación financiera — ocurre en Contactos, antes de que exista negocio.</dd>
-        <dt>Servicio</dt><dd>Propiedad de Negocio con la forma de cobro acordada tras el diagnóstico: por trámite, por proyecto o mesa mensual.</dd>
-        <dt>Mesa mensual</dt><dd>Modalidad recurrente para clientes con portafolio de proyectos activos de forma continua.</dd>
+        <dt>Servicio</dt><dd>Propiedad de Negocio con la forma de cobro acordada tras el diagnóstico: por proceso, por proyecto o mix de mesa mensual de asesoría legal + procesos.</dd>
+        <dt>Mix: Mesa mensual + procesos</dt><dd>Modalidad recurrente (mesa mensual de asesoría legal más los procesos contratados) para clientes con portafolio de proyectos activos de forma continua.</dd>
         <dt>Pipeline Reventa/Upselling</dt><dd>Segundo pipeline de negocio, exclusivo para clientes ya existentes (Lifecycle Stage = Customer) con una nueva oportunidad de revenue. No se usa para Customer Success sin venta de por medio.</dd>
         <dt>Comercial asignado</dt><dd>Persona del equipo dueña del contacto desde Nuevo Lead, y del negocio desde que lo crea al confirmarse SQL.</dd>
         <dt>Canal de entrada</dt><dd>Origen del contacto: Apollo/Outbound, Google Ads/Inbound, Base propia, Referidos, Orgánico u Otras fuentes.</dd>
